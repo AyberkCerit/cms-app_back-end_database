@@ -1,101 +1,123 @@
 <div align="center">
-  <p>
-    <a href="README.md">English</a> | <a href="README.tr.md">Türkçe</a>
-  </p>
-  <h1>Next-Gen Laravel CMS & Blog Application</h1>
-  <p>
-    <b>Gelişmiş Veritabanı Mimarisi, Rol Yönetimi ve Çoklu Dil Desteği Barındıran Modern İçerik Yönetim Sistemi</b>
-  </p>
-  <p>
-    <img src="https://img.shields.io/badge/PHP-8.4-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP 8.4" />
-    <img src="https://img.shields.io/badge/Laravel-13.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel" />
-    <img src="https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
-    <img src="https://img.shields.io/badge/Vite-Bundler-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-  </p>
+
+# CMS & Blog Platform
+
+**A fully-featured Content Management System built with modern web development standards**
+
+[![PHP](https://img.shields.io/badge/PHP-8.4-777BB4?style=flat-square&logo=php&logoColor=white)](https://www.php.net/)
+[![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?style=flat-square&logo=laravel&logoColor=white)](https://laravel.com/)
+[![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=flat-square&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Vite](https://img.shields.io/badge/Vite-Build_Tool-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](#)
+
 </div>
 
 ---
 
-## Proje Hakkında
+## About the Project
 
-Bu proje, modern web geliştirme standartlarına (MVC mimarisi, RESTful yapı, ORM optimizasyonları) uygun olarak geliştirilmiş tam kapsamlı bir **İçerik Yönetim Sistemi (CMS)** ve Blog platformudur. 
+This project is a fully-featured Content Management System (CMS) and Blog platform developed in accordance with modern web development standards, including MVC architecture, RESTful structures, and ORM optimizations.
 
-Bir stajyer/Junior geliştiricinin temel CRUD işlemlerinin çok ötesine geçerek; performans optimizasyonları (N+1 sorgu sorunlarının çözümü), güvenli yetkilendirme (Role-Based Access Control) ve asenkron veri yönetimi (AJAX) gibi kurumsal düzeyde aranan yetkinlikleri pratiğe dökme amacıyla inşa edilmiştir. Back-end konusunda pratik kazanmak için oluşturduğum bir projedir.
-
-## Temel Özellikler
-
-### Güvenlik ve Yetkilendirme
-- **Role-Based Access Control (RBAC):** Spatie Permissions kullanılarak `Admin` ve `Yazar` olmak üzere ayrılmış katı yetki hiyerarşisi.
-- **Veri İzolasyonu:** Yazarlar yalnızca kendi blog yazılarını düzenleyip silebilirken, yöneticiler sistemdeki tüm içeriğe ve kullanıcı yönetimine tam erişim sağlar.
-
-### Performans ve Veritabanı Optimizasyonu
-- **Sorgu Optimizasyonu:** Eloquent ORM üzerinde `with()` eager loading yapıları kullanılarak veritabanına binen yük minimize edilmiş ve N+1 sorgu sorunları giderilmiştir.
-- **İndeksleme (Indexing):** Blog tablolarında sık aranan sütunlar (`status`, `category_id`) indekslenerek sorgu yanıt süreleri optimize edilmiştir.
-- **Önbellekleme (Caching):** Laravel Cache mekanizmaları kullanılarak anasayfa ve menü yüklemeleri hızlandırılmıştır.
-
-### Çoklu Dil Altyapısı
-- İçeriklerin (Bloglar ve Kategoriler) hem Türkçe hem de İngilizce yönetilebilmesini sağlayan dinamik çeviri (Translation) tabloları kurgulanmıştır.
-- Kullanıcı arayüzünde anlık dil değiştirme yeteneği bulunmaktadır.
-
-### Medya ve Profil Yönetimi
-- Kullanıcı avatarları için güvenli dosya yükleme (File Upload) modülü.
-- Sunucu tarafında dosya boyutu, MIME type ve uzantı doğrulamaları ile güvenlik önlemleri alınmıştır.
-
-### Modern Frontend ve AJAX Mimarisi
-- **DataTables & AJAX:** Sayfa yenilenmeden asenkron olarak büyük veri setlerinin filtrelenip listelenmesi.
-- **Vite Entegrasyonu:** CSS ve JS dosyalarının production ortamı için optimize edilip derlenmesi.
+It was built to demonstrate enterprise-level competencies such as performance optimization (solving N+1 query problems), secure authorization (Role-Based Access Control), and asynchronous data management (AJAX). It serves as a comprehensive backend project aimed at implementing industry best practices.
 
 ---
 
-## Kullanılan Teknolojiler
+## Key Features
 
-| Katman | Teknolojiler |
-| :--- | :--- |
+### Security & Authorization
+
+| Feature | Description |
+|---|---|
+| **Role-Based Access Control (RBAC)** | Strict permission hierarchy separated into Admin and Author roles using Spatie Permissions. |
+| **Data Isolation** | Authors can only edit and delete their own blog posts, while administrators have full access to all content and user management capabilities. |
+
+### Performance & Database Optimization
+
+| Feature | Description |
+|---|---|
+| **Query Optimization** | Database load is minimized by utilizing `with()` eager loading in Eloquent ORM to eliminate N+1 query issues. |
+| **Indexing** | Query execution time is significantly reduced by indexing frequently searched columns (e.g., `status`, `category_id`). |
+| **Caching** | Homepage and navigation menus are optimized utilizing Laravel's native Cache mechanisms. |
+
+### Multi-language Infrastructure
+
+- Dynamic Translation Tables are configured to allow content (such as Blogs and Categories) to be localized in both Turkish and English.
+- The user interface features an instant language switching capability.
+
+### Media & Profile Management
+
+- A secure file management module designed for user avatar uploads.
+- Comprehensive server-side validations including file size restrictions, MIME type checking, and extension verification.
+
+### Modern Frontend & AJAX Architecture
+
+| Feature | Description |
+|---|---|
+| **DataTables & AJAX** | Asynchronous filtering and pagination of large datasets without requiring full page reloads. |
+| **Vite Integration** | CSS and JavaScript assets are optimized, bundled, and compiled for the production environment. |
+
+---
+
+## Technologies Used
+
+| Layer | Technologies |
+|---|---|
 | **Backend** | PHP 8.4, Laravel 13 |
-| **Veritabanı** | MySQL, Eloquent ORM |
+| **Database** | MySQL, Eloquent ORM |
 | **Frontend** | Blade Template Engine, Bootstrap 5 / Tailwind CSS, JavaScript (AJAX) |
-| **Paketler** | Spatie Permission, Yajra DataTables, Vite |
+| **Packages** | Spatie Permission, Yajra DataTables, Vite |
 
 ---
 
-## Yerel Kurulum
+## Local Setup
 
-Projeyi kendi geliştirme ortamınızda çalıştırmak için aşağıdaki adımları izleyebilirsiniz:
+Follow these steps to set up and run the project in your local development environment:
 
-1. **Projeyi Klonlayın:**
-   ```bash
-   git clone https://github.com/AyberkCerit/cms-app.git
-   cd cms-app
-   ```
+**1. Clone the Repository:**
 
-2. **Bağımlılıkları Yükleyin:**
-   ```bash
-   composer install
-   npm install
-   npm run build
-   ```
+```bash
+git clone https://github.com/AyberkCerit/cms-app.git
+cd cms-app
+```
 
-3. **Çevre Değişkenlerini Yapılandırın:**
-   Örnek yapılandırma dosyasını kopyalayın ve veritabanı bilgilerinizi girin.
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
+**2. Install Dependencies:**
 
-4. **Veritabanını Hazırlayın:**
-   Migration işlemlerini çalıştırarak veritabanı şemasını oluşturun:
-   ```bash
-   php artisan migrate
-   ```
+```bash
+composer install
+npm install
+npm run build
+```
 
-5. **Uygulamayı Başlatın:**
-   ```bash
-   php artisan serve
-   ```
-   *Uygulama `http://localhost:8000` adresinde çalışmaya başlayacaktır.*
+**3. Configure Environment:**
+
+Copy the example environment file and configure your database credentials.
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+**4. Prepare the Database:**
+
+Run migrations to create the database schema:
+
+```bash
+php artisan migrate
+```
+
+**5. Start the Application:**
+
+```bash
+php artisan serve
+```
+
+The application will be accessible.
 
 ---
 
 <div align="center">
-  <i>Bu proje, Temiz Kod (Clean Code) prensipleri ve kurumsal yazılım mimarisi standartları gözetilerek geliştirilmiştir. Kod incelemesi için kaynak dosyalarına göz atabilirsiniz.</i>
+
+Developed with a focus on Clean Code principles and enterprise software architecture standards.
+**Code review is highly encouraged.**
+
 </div>
