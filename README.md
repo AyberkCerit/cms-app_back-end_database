@@ -1,7 +1,10 @@
 <div align="center">
-  <h1>🚀 Next-Gen Laravel CMS & Blog Application</h1>
   <p>
-    <b>Gelişmiş Veritabanı Mimarisi, Rol Yönetimi ve Çoklu Dil Desteği Barındıran Modern İçerik Yönetim Sistemi</b>
+    <a href="README.md">English</a> | <a href="README.tr.md">Türkçe</a>
+  </p>
+  <h1>Next-Gen Laravel CMS & Blog Application</h1>
+  <p>
+    <b>A Modern Content Management System featuring Advanced Database Architecture, Role Management, and Multi-Language Support</b>
   </p>
   <p>
     <img src="https://img.shields.io/badge/PHP-8.4-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP 8.4" />
@@ -13,85 +16,86 @@
 
 ---
 
-## 🎯 Proje Hakkında
-Bu proje, modern web geliştirme standartlarına (MVC mimarisi, RESTful yapı, ORM optimizasyonları) uygun olarak geliştirilmiş tam kapsamlı bir **İçerik Yönetim Sistemi (CMS)** ve Blog platformudur. 
+## About the Project
 
-Bir stajyer/Junior geliştiricinin temel CRUD işlemlerinin çok ötesine geçerek; performans optimizasyonları (N+1 sorgu sorunlarının çözümü), güvenli yetkilendirme (Role-Based Access Control) ve asenkron veri yönetimi (AJAX) gibi kurumsal düzeyde aranan yetkinlikleri pratiğe dökme amacıyla inşa edilmiştir.Back-end konusunda pratik kazanmak için oluşturduğum bir projedir.
+This project is a fully-featured **Content Management System (CMS)** and Blog platform developed in accordance with modern web development standards, including MVC architecture, RESTful structures, and ORM optimizations. 
 
-## ✨ Öne Çıkan Özellikler (Neler Başardım?)
+It was built to demonstrate enterprise-level competencies such as performance optimization (solving N+1 query problems), secure authorization (Role-Based Access Control), and asynchronous data management (AJAX). It serves as a comprehensive backend project aimed at implementing industry best practices.
 
-### 🔐 Gelişmiş Güvenlik ve Yetkilendirme (Spatie Permissions)
-- **Role-Based Access Control (RBAC):** `Admin` ve `Yazar` olmak üzere ayrılmış katı yetki hiyerarşisi.
-- **Veri İzolasyonu:** Yazarlar yalnızca kendi blog yazılarını düzenleyip silebilirken, yöneticiler sistemdeki tüm içeriğe ve kullanıcı yönetimine (ekleme/silme/düzenleme) tam erişim sağlar.
+## Key Features
 
-### ⚡ Performans ve Veritabanı Optimizasyonları
-- **N+1 Sorgu Optimizasyonu:** Eloquent ORM üzerinde `with()` eager loading yapıları kullanılarak veritabanına binen yük minimize edildi.
-- **İndeksleme (Indexing):** Blog tablolarında sık aranan sütunlar (status, category_id) indekslenerek sorgu hızları artırıldı.
-- **Önbellekleme (Caching):** Laravel Cache mekanizmaları ile anasayfa ve menü yüklemeleri optimize edildi.
+### Security & Authorization
+- **Role-Based Access Control (RBAC):** Strict permission hierarchy separated into `Admin` and `Author` roles using Spatie Permissions.
+- **Data Isolation:** Authors can only edit and delete their own blog posts, while administrators have full access to all content and user management capabilities.
 
-### 🌍 Çoklu Dil (Multi-language) Altyapısı
-- İçeriklerin (Bloglar, Kategoriler) hem Türkçe hem de İngilizce girilebilmesini sağlayan dinamik çeviri tabloları (Translation Tables) kurgulandı.
-- Kullanıcı arayüzü anlık dil değiştirme yeteneğine sahiptir.
+### Performance & Database Optimization
+- **Query Optimization:** Database load is minimized by utilizing `with()` eager loading in Eloquent ORM to eliminate N+1 query issues.
+- **Indexing:** Query execution time is significantly reduced by indexing frequently searched columns (e.g., `status`, `category_id`).
+- **Caching:** Homepage and navigation menus are optimized utilizing Laravel's native Cache mechanisms.
 
-### 🖼️ Medya ve Profil Yönetimi
-- Kullanıcıların kendi avatarlarını güvenle yükleyebileceği (File Upload) dosya yönetim modülü.
-- Sunucu tarafı dosya boyutu, MIME type ve uzantı doğrulamaları.
+### Multi-language Infrastructure
+- Dynamic Translation Tables are configured to allow content (such as Blogs and Categories) to be localized in both Turkish and English.
+- The user interface features an instant language switching capability.
 
-### 💻 Modern Frontend ve AJAX Mimarisi
-- **DataTables & AJAX:** Sayfa yenilenmeden asenkron olarak binlerce verinin filtrelenip listelenmesi.
-- **Vite Entegrasyonu:** CSS ve JS dosyalarının production ortamı için optimize edilip derlenmesi.
+### Media & Profile Management
+- A secure file management module designed for user avatar uploads.
+- Comprehensive server-side validations including file size restrictions, MIME type checking, and extension verification.
+
+### Modern Frontend & AJAX Architecture
+- **DataTables & AJAX:** Asynchronous filtering and pagination of large datasets without requiring full page reloads.
+- **Vite Integration:** CSS and JavaScript assets are optimized, bundled, and compiled for the production environment.
 
 ---
 
-## 🛠️ Kullanılan Teknolojiler
+## Technologies Used
 
-| Kategori | Teknolojiler |
+| Layer | Technologies |
 | :--- | :--- |
 | **Backend** | PHP 8.4, Laravel 13 |
-| **Veritabanı** | MySQL, Eloquent ORM |
+| **Database** | MySQL, Eloquent ORM |
 | **Frontend** | Blade Template Engine, Bootstrap 5 / Tailwind CSS, JavaScript (AJAX) |
-| **Araçlar & Paketler** | Spatie Permission, Yajra DataTables, Vite |
+| **Packages** | Spatie Permission, Yajra DataTables, Vite |
 
 ---
 
-## 🚀 Yerel Ortamda Kurulum (Local Setup)
+## Local Setup
 
-Projeyi kendi bilgisayarınızda test etmek için aşağıdaki adımları izleyebilirsiniz:
+Follow these steps to set up and run the project in your local development environment:
 
-1. **Projeyi Klonlayın:**
+1. **Clone the Repository:**
    ```bash
    git clone https://github.com/AyberkCerit/cms-app.git
    cd cms-app
    ```
 
-2. **Gerekli Paketleri Yükleyin:**
+2. **Install Dependencies:**
    ```bash
    composer install
    npm install
    npm run build
    ```
 
-3. **Çevre Değişkenlerini Ayarlayın:**
-   `.env.example` dosyasını `.env` olarak kopyalayın ve veritabanı bilgilerinizi girin.
+3. **Configure Environment:**
+   Copy the example environment file and configure your database credentials.
    ```bash
    cp .env.example .env
    php artisan key:generate
    ```
 
-4. **Veritabanını Hazırlayın:**
-   Migration'ları çalıştırarak tabloları oluşturun:
+4. **Prepare the Database:**
+   Run migrations to create the database schema:
    ```bash
    php artisan migrate
    ```
 
-5. **Uygulamayı Başlatın:**
+5. **Start the Application:**
    ```bash
    php artisan serve
    ```
-   *Proje artık `http://localhost:8000` adresinde yayında!*
+   *The application will be accessible.*
 
 ---
 
 <div align="center">
-  <i>Bu proje, temiz kod yazma prensipleri (Clean Code) ve kurumsal yazılım mimarisi standartları gözetilerek geliştirilmiştir. Kod incelemesi için kaynak dosyalarıma göz atabilirsiniz.</i>
+  <i>Developed with a focus on Clean Code principles and enterprise software architecture standards. Code review is highly encouraged.</i>
 </div>
